@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+   
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TASKZ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div> -->
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="row pt-4 ">
+  <div class="col-6">
+  <div class="card pt-4 pb-3 pr-2 background ">
+    <div class="card-body ">
+       <form [formGroup]="taskform" >
+   
+        <div class="form-group  ">
+        <div class="row">
+          <div class="col-10">
+            <input type="text" class="form-control" formControlName="Task" id="Task"placeholder="Enter The Task" 
+            aria-describedby="emailHelp">
+          <!-- <span *ngIf="taskform.get('Task').touched && taskform.get('Task').hasError('required')">Enter Task</span> -->
+        </div>
+          <div class="col-2">
+            <button class="btn btn-outline-secondary" type="button"(click)="task();" >ADD</button>
+          </div>
+       
+        </div>       
+       
+      </div>
+    </form> 
+    
+    </div>
+  </div>
+</div>
+<div class="col-6">
+  <div *ngIf="nodata" class="card background">
+    <div  class="card-body">
+      <p >No Task For Now</p>
+    </div>
+  </div>
+    <div *ngIf = "nodata==false" class="card background">
+    <div  class="card-body"  >
+      
+      
+      
+        <div class="row">
+          <div class="col-8 pt-4">
+            <p>{{taskinfo}}</p>
+          </div>
+        <div class="col-4">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Completed
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+             Pending
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+            <label class="form-check-label" for="exampleRadios3">
+              In Progress
+            </label>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+</p>fdgdfgdfgdgfdg</p>
+</main>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

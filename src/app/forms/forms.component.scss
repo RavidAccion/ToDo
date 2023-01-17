@@ -1,0 +1,41 @@
+input.ng-touched.ng-invalid{
+  border:1px solid red;
+}
+input.ng-touched.ng-valid{
+  border:1px solid rgb(0, 255, 51);
+}
+.first{
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 100vh;
+ 
+background-color: #ff000017;
+  border-radius: 10px;
+  box-shadow: inset;
+}
+.buttonchange{
+  background-color: #a66c1fb8 !important;
+  border: antiquewhite !important;
+}
+.txtcolor{
+  color: #b27e38;
+  padding-top: 10rem !important;
+}
+.sec{
+  margin: auto;
+  width: 60%;
+ 
+  //border: 3px solid green;
+  padding: 10px;
+}
+label{
+  color: #b27e38;
+}
+// .bg{
+//   border: 2px solid black;
+//   padding: 25px;
+//   background: url('/assets/images/log.jpg')  no-repeat!important;
+//   background-repeat: no-repeat;
+//   background-size: 100% 100% !important;
+// }

@@ -1,0 +1,24 @@
+<div class="container first bg ">
+  <div class="sec">
+    <h3 class=" text-center txtcolor pt-3">TASKZ</h3>
+    <h5 class=" text-center  pt-3">LOG IN</h5>
+    <form [formGroup]="myform" (ngSubmit)="subData();">
+      <div class="form-group pb-3 ">
+        <label class="pb-3" for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
+          aria-describedby="emailHelp">
+        <span *ngIf="myform.get('email').touched && myform.get('email').hasError('required')">Enter E-Mail</span>
+        <span *ngIf="myform.get('email').touched && myform.get('email').hasError('email')">Enter valid E-Mail</span>
+      </div>
+      <div class="form-group  pb-3">
+        <label class="pb-3" for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" formControlName="Password" id="exampleInputPassword1">
+        <span *ngIf="myform.get('Password').touched && myform.get('Password').hasError('required')">Enter
+          password</span>
+      </div>
+      <div class=" text-center pb-3">
+        <button type="submit" class="btn btn-primary bt buttonchange" [disabled]="!myform.valid">Log In</button>
+      </div>
+    </form>
+  </div>
+</div>

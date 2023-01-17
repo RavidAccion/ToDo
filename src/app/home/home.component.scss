@@ -1,0 +1,47 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+  height: 100vh;
+    background-color: #70809082;
+}
+.background{
+ background-color: aliceblue;
+}
+
+input.ng-touched.ng-invalid{
+  border:1px solid red;
+}
+
+.b-example-vr {
+flex-shrink: 0;
+width: 1.5rem;
+height: 100vh;
+}
+
+.bi {
+vertical-align: -.125em;
+fill: currentColor;
+}
+
+.nav-scroller {
+position: relative;
+z-index: 2;
+height: 2.75rem;
+overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+display: flex;
+flex-wrap: nowrap;
+padding-bottom: 1rem;
+margin-top: -1px;
+overflow-x: auto;
+text-align: center;
+white-space: nowrap;
+-webkit-overflow-scrolling: touch;
+}
