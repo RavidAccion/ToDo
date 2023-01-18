@@ -16,7 +16,17 @@ body {
 input.ng-touched.ng-invalid{
   border:1px solid red;
 }
-
+.bgbody{
+  background-color: #bbaaaa30;}
+.scroll{
+  max-height: 362px;
+     overflow-y: scroll;
+    border-radius: 14px;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
 .b-example-vr {
 flex-shrink: 0;
 width: 1.5rem;

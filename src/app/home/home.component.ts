@@ -1,4 +1,4 @@
-import { Component,OnChanges } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,19 +8,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  
   taskform: any = FormGroup;
+  taskstatus: any = FormGroup;
   taskdata = [''];
-  sessiondata :any='';
-  nodata: boolean=false;
+ i:any;
+  sessiondata: any = '';
+  nodata: boolean = false;
+  completed: boolean = true;
+  progress: boolean = false;
+  pending: boolean = false;
   taskinfo: any;
-  sessionupdate: any=[];
+  text:any;
+  sessionupdate: any = [];
+
+
   constructor(private formBuilder: FormBuilder, private router: Router) { }
   ngOnInit(): void {
     this.taskformBuild();
     this.session();
-    
+
   }
- 
+
   taskformBuild(): void {
     this.taskform = this.formBuilder.group({
       Task: new FormControl('', [
@@ -31,29 +40,56 @@ export class HomeComponent {
 
     },)
   }
+  taskstatusForm() {
+    this.taskstatus = this.formBuilder.group({
+      status: ['In-Progresss', Validators.required]
+    })
+  }
+  statusUpdate() {
+    console.log(this.taskstatus.value)
+  }
+
   task() {
-  
-    sessionStorage.setItem('name',JSON.stringify(this.sessionupdate) );
     this.sessionupdate.push(this.taskform.value.Task);
+    sessionStorage.setItem('name', JSON.stringify(this.sessionupdate));
+ 
     console.log("yes")
     console.log(this.taskform.value.Task)
     this.taskdata = this.taskform.value.Task;
-    //sessionStorage.setItem('name1', JSON.stringify(this.taskdata));
-    //  sessionStorage.setItem('name', this.taskform.value.Task);
-     this.ngOnInit();
-  }
-  session(){
-    this.sessiondata = sessionStorage.getItem("name");
-    console.log(this.sessiondata)
-    console.log( this.sessiondata)
-    if(this.sessiondata==null){
-      this.nodata=true;
-    }else if(this.sessiondata!=null){
-      this.nodata=false;
-      
-      this.taskinfo=this.sessiondata;
-    }
-   
-  }
 
+    this.ngOnInit();
+  }
+  session() {
+    this.sessiondata = sessionStorage.getItem("name");
+   
+   
+    if (this.sessiondata == null) {
+      this.nodata = true;
+    } else if (this.sessiondata != null) {
+      this.nodata = false;
+
+      this.taskinfo =JSON.parse( this.sessiondata);
+      console.log(this.taskinfo)
+      console.log(this.sessiondata)
+      // for(let i of this.taskinfo) { console.log(i); }
+    }
+
+  }
+  Completed() {
+    this.completed = true;
+    this.progress = false;
+    this.pending = false;
+    console.log(this.completed)
+    
+  }
+  Progress() {
+    this.progress = true;
+    this.pending = false;
+    this.completed = false;
+  }
+  Pending() {
+    this.progress = false;
+    this.completed = false;
+    this.pending = true;
+  }
 }
