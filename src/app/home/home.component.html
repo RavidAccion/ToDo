@@ -3,21 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.108.0">
-   
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
   </head>
   <body>
-    
+
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">TASKZ</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+       aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -50,24 +46,22 @@
   <div class="card pt-4 pb-3 pr-2 background ">
     <div class="card-body ">
        <form [formGroup]="taskform" >
-   
+
         <div class="form-group  ">
         <div class="row">
           <div class="col-10">
-            <input type="text" class="form-control" formControlName="Task" id="Task"placeholder="Enter The Task" 
-            aria-describedby="emailHelp">
-          <!-- <span *ngIf="taskform.get('Task').touched && taskform.get('Task').hasError('required')">Enter Task</span> -->
+            <input type="text" class="form-control" formControlName="Task" id="Task"
+            placeholder="Enter The Task" aria-describedby="emailHelp">
+          <!-- <span *ngIf="taskform.get('Task').touched && taskform.get('Task').hasError('required')
+            ">Enter Task</span> -->
         </div>
           <div class="col-2">
             <button class="btn btn-outline-secondary" type="button" (click)="task();" >ADD</button>
            <!-- (click)="task();" -->
           </div>
-       
-        </div>       
-       
+        </div>
       </div>
-    </form> 
-    
+    </form>
     </div>
   </div>
 
@@ -86,31 +80,29 @@
             <button type="button" class="btn btn-secondary" (click)="Pending();">Pending</button>
           </div>
         </div>
-        <div class="row pt-3">
+        <div class="row pt-3 history" >
           <div *ngIf="completed"class="card">
             <div class="card-body ">
               <p >Here we can view the history of Completed Tasks</p>
             </div>
-
           </div>
           <div *ngIf="progress"class="card">
             <div class="card-body ">
               <p >Here we can view the history of In ProgressTasks</p>
             </div>
-
-          </div>
+         </div>
           <div *ngIf="pending"class="card">
-            <div class="card-body ">
-              <p >Here we can view the history of  Pending  Tasks</p>
+            <!-- <div class="card-body "> -->
+              <div  class="card-body bgody mb-2" *ngFor="let val of taskinfo" >
+                <div class="row">
+                    <p>{{val}}</p>
+                </div>
             </div>
-
           </div>
-
         </div>
         </div>
         <!-- </div> -->
   </div>
-
 </div>
 <div class="col-6 scroll ">
   <div *ngIf="nodata" class="card background">
@@ -127,36 +119,30 @@
         <div class="col-4">
           <form [formGroup]="taskstatus" >
             <div class="custom-control custom-radio">
-							<input id="male" type="radio" class="custom-control-input" value="Completed" name="Status" formControlName="Status">
+							<input id="male" type="radio" class="custom-control-input" value="Completed"
+              name="Status" formControlName="Status">
               <label class="custom-control-label" for="male">Completed</label>
             </div>
             <div class="custom-control custom-radio">
-							<input id="male" type="radio" class="custom-control-input" value="In-Progresss" name="Status" formControlName="Status">
+							<input id="male" type="radio" class="custom-control-input" value="In-Progresss"
+              name="Status" formControlName="Status">
               <label class="custom-control-label" for="male" >In-Progresss</label>
             </div>
             <div class="custom-control custom-radio">
-							<input id="male" type="radio" class="custom-control-input" value="Completed" name="Status" formControlName="Status">
-              <label class="custom-control-label" for="male">Completed</label>
+							<input id="male" type="radio" class="custom-control-input" value="Pending"
+              name="Status" formControlName="Status">
+              <label class="custom-control-label" for="male">Pending</label>
             </div>
-         
           <button type="button" class="btn btn-info mt-3"(click)="statusUpdate();">Update</button>
         </form>
           </div>
         </div>
       </div>
-
-
-      
-
     </div>
 </div>
 </div>
 
 </main>
-
-
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
   </body>
 </html>

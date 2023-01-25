@@ -18,6 +18,12 @@ input.ng-touched.ng-invalid{
 }
 .bgbody{
   background-color: #bbaaaa30;}
+  .history{
+    min-height: 122px;
+    max-height: 122px;
+    overflow-y: scroll;
+    border-radius: 14px;
+  }
 .scroll{
   max-height: 362px;
      overflow-y: scroll;
