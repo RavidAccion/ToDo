@@ -7,19 +7,16 @@ import { FormsComponent } from './forms/forms.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormsComponent,
-    HomeComponent
-  ],
+  declarations: [AppComponent, FormsComponent, HomeComponent],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSnackBarModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
